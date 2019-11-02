@@ -23,8 +23,8 @@ export class TodoItem extends Component {
     // }
   }
 
-  markComplete = () => {
-    
+  markComplete = (e) => {
+    console.log(this.props);
   }
 
   render() {
