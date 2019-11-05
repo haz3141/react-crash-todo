@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 
 export class TodoItem extends Component {
   static propTypes = {
-    todo: PropTypes.object.isRequired
+    todo: PropTypes.object.isRequired,
+    toggleComplete: PropTypes.func.isRequired,
+    delTodo: PropTypes.func.isRequired
   }
 
   getStyle = () => {
@@ -16,12 +18,13 @@ export class TodoItem extends Component {
   }
 
   render() {
-    const { id, title } = this.props.todo;
+    const { id, title, completed } = this.props.todo;
     return (
       <div style={ this.getStyle() }>
         <p>
           <input
             type="checkbox"
+            checked={completed}
             onChange={ this.props.toggleComplete.bind(this, id) }
           /> {" "}
           { title }

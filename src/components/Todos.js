@@ -4,7 +4,9 @@ import TodoItem from "./TodoItem";
 
 class Todos extends Component {
   static propTypes = {
-    todos: PropTypes.array.isRequired
+    todos: PropTypes.array.isRequired,
+    toggleComplete: PropTypes.func.isRequired,
+    delTodo: PropTypes.func.isRequired
   }
 
   render() {
