@@ -7,17 +7,13 @@ class Todos extends Component {
     todos: PropTypes.array.isRequired
   }
 
-  delTodo = (id) => {
-    console.log(id);
-  }
-
   render() {
     return this.props.todos.map((todo) => (
       <TodoItem
         key={todo.id}
         todo={todo}
         toggleComplete={this.props.toggleComplete}
-        delTodo={ this.delTodo } />
+        delTodo={ this.props.delTodo } />
     ));
   }
 }
